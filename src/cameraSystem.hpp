@@ -1,11 +1,11 @@
-#ifndef FOLLOWPLAYER_H
-#define FOLLOWPLAYER_H
+#ifndef CameraSystem_H
+#define CameraSystem_H
 
 #include <godot_cpp/classes/camera2d.hpp>
 #include <godot_cpp/classes/node2d.hpp>
 
-class FollowPlayer : public godot::Camera2D {
-    GDCLASS(FollowPlayer, Camera2D);
+class CameraSystem : public godot::Camera2D {
+    GDCLASS(CameraSystem, Camera2D);
 
     private:
         Node2D *target = nullptr;
@@ -16,7 +16,7 @@ class FollowPlayer : public godot::Camera2D {
 
     public:
 
-        FollowPlayer();
+        CameraSystem();
 
        	void _process(double delta) override;
 

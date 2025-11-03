@@ -1,7 +1,7 @@
 #include "register_types.h"
 #include "gdexample.h"
 #include "player.h"
-#include "followPlayer.h"
+#include "cameraSystem.hpp"
 #include <gdextension_interface.h>
 #include <godot_cpp/core/class_db.hpp>
 #include <godot_cpp/godot.hpp>
@@ -15,7 +15,7 @@ void initialize_types(ModuleInitializationLevel p_level) {
 
     ClassDB::register_class<GDExample>();
     ClassDB::register_class<Player>();
-    ClassDB::register_class<FollowPlayer>();
+    ClassDB::register_class<CameraSystem>();
 }
 
 void uninitialize_types(ModuleInitializationLevel p_level) {

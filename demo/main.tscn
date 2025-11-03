@@ -5,15 +5,14 @@
 [node name="main" type="Node2D"]
 
 [node name="GDExample" type="GDExample" parent="."]
-position = Vector2(12.3483, 15.7091)
+position = Vector2(18.128, 19.9729)
 texture = ExtResource("1_ig7tw")
 centered = false
 
 [node name="Player" type="Player" parent="."]
-position = Vector2(336, 128)
+position = Vector2(336, 154.858)
 texture = ExtResource("1_ig7tw")
 
-[node name="FollowPlayer" type="FollowPlayer" parent="." node_paths=PackedStringArray("target")]
+[node name="CameraSystem" type="CameraSystem" parent="." node_paths=PackedStringArray("target")]
 target = NodePath("../Player")
-smooth_factor = 5.0
-position = Vector2(336, 128)
+position = Vector2(336, 154.858)
