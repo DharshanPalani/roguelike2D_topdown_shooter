@@ -9,6 +9,7 @@ class FollowPlayer : public godot::Camera2D {
 
     private:
         Node2D *target = nullptr;
+        float smooth_factor;
 
     protected:
         static void _bind_methods();
@@ -21,7 +22,9 @@ class FollowPlayer : public godot::Camera2D {
 
         void set_target(Node2D* target);
         Node2D* get_target() const;
-    
+
+        void set_smooth_factor(float smooth_factor);
+        float get_smooth_factor() const;
 };
 
 #endif

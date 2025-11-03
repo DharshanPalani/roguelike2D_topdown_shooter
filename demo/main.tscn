@@ -5,7 +5,7 @@
 [node name="main" type="Node2D"]
 
 [node name="GDExample" type="GDExample" parent="."]
-position = Vector2(1.89984, 9.22813)
+position = Vector2(12.3483, 15.7091)
 texture = ExtResource("1_ig7tw")
 centered = false
 
@@ -15,4 +15,5 @@ texture = ExtResource("1_ig7tw")
 
 [node name="FollowPlayer" type="FollowPlayer" parent="." node_paths=PackedStringArray("target")]
 target = NodePath("../Player")
+smooth_factor = 5.0
 position = Vector2(336, 128)

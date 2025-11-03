@@ -26,10 +26,10 @@ void Player::_process(double delta) {
 
     Input *input = Input::get_singleton();
 
-    if (input->is_action_pressed("right")) velocity.x += 1;
-    if (input->is_action_pressed("left"))  velocity.x -= 1;
-    if (input->is_action_pressed("down"))  velocity.y += 1;
-    if (input->is_action_pressed("up"))    velocity.y -= 1;
+    if (input->is_action_pressed("ui_right")) velocity.x += 1;
+    if (input->is_action_pressed("ui_left"))  velocity.x -= 1;
+    if (input->is_action_pressed("ui_down"))  velocity.y += 1;
+    if (input->is_action_pressed("ui_up"))    velocity.y -= 1;
 
     if (velocity.length() > 0) {
         velocity = velocity.normalized() * speed * delta;
