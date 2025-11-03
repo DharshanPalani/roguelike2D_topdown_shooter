@@ -4,11 +4,6 @@
 
 [node name="main" type="Node2D"]
 
-[node name="GDExample" type="GDExample" parent="."]
-position = Vector2(18.128, 19.9729)
-texture = ExtResource("1_ig7tw")
-centered = false
-
 [node name="Player" type="Player" parent="."]
 position = Vector2(336, 154.858)
 texture = ExtResource("1_ig7tw")

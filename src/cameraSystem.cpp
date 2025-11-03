@@ -24,11 +24,7 @@ CameraSystem::CameraSystem() {
 }
 
 void CameraSystem::_process(double delta) {
-
-    if(target != nullptr) {
-        godot::Vector2 newPosition = get_position() + (target->get_position() - get_position()) * (smooth_factor * delta);
-        set_position(newPosition);
-    }
+    follow_target(delta);
 }
 
 void CameraSystem::set_target(Node2D* target) {
@@ -45,4 +41,11 @@ void CameraSystem::set_smooth_factor(float smooth_factor) {
 
 float CameraSystem::get_smooth_factor() const {
     return smooth_factor;
+}
+
+void CameraSystem::follow_target(const double &delta) {
+    if(target != nullptr) {
+        godot::Vector2 newPosition = get_position() + (target->get_position() - get_position()) * (smooth_factor * delta);
+        set_position(newPosition);
+    }
 }
