@@ -16,7 +16,7 @@ Player::Player() {
     health = 100;
     speed = 200;
 
-    playerSpriteData.spriteCenter = Vector2(50, 50);
+    playerSpriteData.spriteCenter = Vector2(0, 0);
     playerSpriteData.spriteColor = Color(1,1,0);
     playerSpriteData.spriteRadius = 50.0f;
 }

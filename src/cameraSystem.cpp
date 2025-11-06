@@ -4,7 +4,6 @@
 #include <godot_cpp/variant/utility_functions.hpp>
 #include <godot_cpp/core/class_db.hpp>
 
-
 void CameraSystem::_bind_methods() {
     
     // the below 2 are binding for set_target and get_target, set_target receives a target to set in the private variable
@@ -35,7 +34,24 @@ CameraSystem::CameraSystem() {
 void CameraSystem::_process(double delta) {
     // calls follow_target every frame or second idk.
     follow_target(delta);
+
+    if(target) {
+        godot::Vector2 mouse = get_global_mouse_position();
+    
+        godot::Vector2 direction = mouse - target->get_position();
+    
+        // float angle = godot::Math::rad_to_deg(godot::Math::atan2(direction.y, direction.x)) + 90.0f;
+
+        float angle = godot::Math::rad_to_deg(godot::Math::atan2(direction.y, direction.x)) + 90.0f;
+    
+        target->set_rotation_degrees(angle);
+    }
+
+
+
 }
+
+
 
 // receives the pointer of the target and sets it in the private. Having reference of that target not as whole. Don't forget.
 void CameraSystem::set_target(Node2D* target) {

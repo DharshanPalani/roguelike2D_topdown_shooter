@@ -1,7 +1,7 @@
 #ifndef PLAYER_H
 #define PLAYER_H
 
-#include <godot_cpp/classes/character_body2d.hpp>
+#include <godot_cpp/classes/sprite2d.hpp>
 
 using namespace godot;
 
@@ -12,8 +12,8 @@ struct PlayerSpriteData
 	Color spriteColor;
 };
 
-class Player : public CharacterBody2D {
-	GDCLASS(Player, CharacterBody2D)
+class Player : public Sprite2D {
+	GDCLASS(Player, Sprite2D);
 
 private:
 	double health;
