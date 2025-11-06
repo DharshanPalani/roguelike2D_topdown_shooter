@@ -5,6 +5,11 @@
 [node name="Player" type="Player" parent="."]
 position = Vector2(336, 154.858)
 
+[node name="Gun" type="Gun" parent="Player"]
+z_index = -1
+position = Vector2(57, -15.858)
+rotation = 1.5708
+
 [node name="CameraSystem" type="CameraSystem" parent="." node_paths=PackedStringArray("target")]
 target = NodePath("../Player")
 position = Vector2(336, 154.858)

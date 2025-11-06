@@ -5,6 +5,8 @@
 #include <godot_cpp/core/class_db.hpp>
 #include <godot_cpp/godot.hpp>
 
+#include <gun.hpp>
+
 using namespace godot;
 
 void initialize_types(ModuleInitializationLevel p_level) {
@@ -14,6 +16,7 @@ void initialize_types(ModuleInitializationLevel p_level) {
     
     ClassDB::register_class<Player>();
     ClassDB::register_class<CameraSystem>();
+    ClassDB::register_class<Gun>();
 }
 
 void uninitialize_types(ModuleInitializationLevel p_level) {
