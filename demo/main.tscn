@@ -3,7 +3,7 @@
 [node name="main" type="Node2D"]
 
 [node name="Player" type="Player" parent="."]
-rotation = 0.966069
+rotation = 0.981306
 
 [node name="Gun" type="Gun" parent="Player"]
 z_index = -1

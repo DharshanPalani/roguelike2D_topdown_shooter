@@ -1,9 +1,9 @@
 #include <gun.hpp>
 
-// #include <godot_cpp/classes/input.hpp>
+#include <godot_cpp/classes/input.hpp>
+#include <godot_cpp/classes/sprite2d.hpp>
 
 void Gun::_bind_methods() {
-
 }
 
 Gun::Gun() {
@@ -11,6 +11,13 @@ Gun::Gun() {
 }
 
 void Gun::_process(double delta) {
+
+    godot::Input* input = godot::Input::get_singleton();
+
+    if(input->is_action_just_pressed("fire")) {
+        Node2D* node = memnew(Node2D);
+        add_child(node);
+    }
 
 }
 

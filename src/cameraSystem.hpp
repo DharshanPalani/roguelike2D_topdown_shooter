@@ -27,6 +27,8 @@ class CameraSystem : public godot::Camera2D {
         float get_smooth_factor() const;
 
         void follow_target(const double &delta);
+
+        void rotate_target();
 };
 
 #endif

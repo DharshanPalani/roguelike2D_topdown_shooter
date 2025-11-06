@@ -34,21 +34,7 @@ CameraSystem::CameraSystem() {
 void CameraSystem::_process(double delta) {
     // calls follow_target every frame or second idk.
     follow_target(delta);
-
-    if(target) {
-        godot::Vector2 mouse = get_global_mouse_position();
-    
-        godot::Vector2 direction = mouse - target->get_position();
-    
-        // float angle = godot::Math::rad_to_deg(godot::Math::atan2(direction.y, direction.x)) + 90.0f;
-
-        float angle = godot::Math::rad_to_deg(godot::Math::atan2(direction.y, direction.x)) + 90.0f;
-    
-        target->set_rotation_degrees(angle);
-    }
-
-
-
+    rotate_target();
 }
 
 
@@ -78,5 +64,18 @@ void CameraSystem::follow_target(const double &delta) {
         // some formula bs to calculate new position for that smooth camera movement and sets it in the next line.
         godot::Vector2 newPosition = get_position() + (target->get_position() - get_position()) * (smooth_factor * delta);
         set_position(newPosition);
+    }
+}
+
+void CameraSystem::rotate_target() {
+
+    if(target) {
+        godot::Vector2 mouse = get_global_mouse_position();
+    
+        godot::Vector2 direction = mouse - target->get_position();
+
+        float angle = godot::Math::rad_to_deg(godot::Math::atan2(direction.y, direction.x)) + 90.0f;
+    
+        target->set_rotation_degrees(angle);
     }
 }
