@@ -1,12 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://b5lnjyl5tter6"]
-
-[ext_resource type="Texture2D" uid="uid://cmmwve0u3mrxe" path="res://icon.svg" id="1_ig7tw"]
+[gd_scene format=3 uid="uid://b5lnjyl5tter6"]
 
 [node name="main" type="Node2D"]
 
 [node name="Player" type="Player" parent="."]
 position = Vector2(336, 154.858)
-texture = ExtResource("1_ig7tw")
 
 [node name="CameraSystem" type="CameraSystem" parent="." node_paths=PackedStringArray("target")]
 target = NodePath("../Player")

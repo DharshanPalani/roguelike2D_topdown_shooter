@@ -1,9 +1,6 @@
 #include <player.h>
 
 #include <godot_cpp/classes/input.hpp>
-// #include <godot_cpp/core/class_db.hpp>
-// #include <godot_cpp/variant/vector2.hpp>
-// #include <godot_cpp/variant/utility_functions.hpp>
 
 using namespace godot;
 
@@ -18,6 +15,10 @@ void Player::_bind_methods() {
 Player::Player() {
     health = 100;
     speed = 200;
+
+    playerSpriteData.spriteCenter = Vector2(50, 50);
+    playerSpriteData.spriteColor = Color(1,1,0);
+    playerSpriteData.spriteRadius = 50.0f;
 }
 
 
@@ -47,7 +48,19 @@ double Player::get_speed() const {
     return speed;
 }
 
-
 void Player::set_speed(float speed) {
     this->speed = speed;
+}
+
+void Player::set_player_sprite_data(PlayerSpriteData data) {
+    this->playerSpriteData = data;
+}
+
+PlayerSpriteData Player::get_player_sprite_data() const {
+    return this->playerSpriteData;
+}
+
+void Player::_draw() {
+
+    draw_circle(playerSpriteData.spriteCenter, playerSpriteData.spriteRadius, playerSpriteData.spriteColor);
 }
