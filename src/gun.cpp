@@ -2,8 +2,22 @@
 
 #include <godot_cpp/classes/input.hpp>
 #include <godot_cpp/classes/sprite2d.hpp>
+#include <godot_cpp/classes/tree.hpp>
+
+#include <bullet.hpp>
 
 void Gun::_bind_methods() {
+
+    godot::ClassDB::bind_method(godot::D_METHOD("set_firePoint", "firePoint"), &Gun::set_firePoint);
+    godot::ClassDB::bind_method(godot::D_METHOD("get_firePoint"), &Gun::get_firePoint);
+
+    ADD_PROPERTY(godot::PropertyInfo(godot::Variant::OBJECT, "firePoint", godot::PROPERTY_HINT_NODE_TYPE, "Node2D"), "set_firePoint", "get_firePoint");
+
+    godot::ClassDB::bind_method(godot::D_METHOD("set_bulletContainer", "bulletContainer"), &Gun::set_bulletContainer);
+    godot::ClassDB::bind_method(godot::D_METHOD("get_bulletContainer"), &Gun::get_bulletContainer);
+
+    ADD_PROPERTY(godot::PropertyInfo(godot::Variant::OBJECT, "bulletContainer", godot::PROPERTY_HINT_NODE_TYPE, "Node2D"), "set_bulletContainer", "get_bulletContainer");
+
 }
 
 Gun::Gun() {
@@ -14,9 +28,13 @@ void Gun::_process(double delta) {
 
     godot::Input* input = godot::Input::get_singleton();
 
-    if(input->is_action_just_pressed("fire")) {
-        Node2D* node = memnew(Node2D);
-        add_child(node);
+    if(firePoint == nullptr) return;
+
+    if(input->is_action_just_pressed("fire") && firePoint != nullptr) {
+        Bullet* newBullet = memnew(Bullet);
+        newBullet->set_rotation(firePoint->get_global_rotation());
+        newBullet->set_position(firePoint->get_global_position());
+        bulletContainer->add_child(newBullet);
     }
 
 }
@@ -37,4 +55,20 @@ double Gun::get_range() const {
 
 void Gun::set_range(double range) {
     this->range = range;
+}
+
+godot::Node2D* Gun::get_firePoint() const {
+    return this->firePoint;
+}
+
+void Gun::set_firePoint(godot::Node2D* firePoint) {
+    this->firePoint = firePoint;
+}
+
+godot::Node2D* Gun::get_bulletContainer() const {
+    return this->bulletContainer;
+}
+
+void Gun::set_bulletContainer(godot::Node2D* bulletContainer) {
+    this->bulletContainer = bulletContainer;
 }

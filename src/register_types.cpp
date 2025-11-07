@@ -1,6 +1,7 @@
 #include "register_types.h"
 #include "player.h"
 #include "cameraSystem.hpp"
+#include <bullet.hpp>
 #include <gdextension_interface.h>
 #include <godot_cpp/core/class_db.hpp>
 #include <godot_cpp/godot.hpp>
@@ -17,6 +18,7 @@ void initialize_types(ModuleInitializationLevel p_level) {
     ClassDB::register_class<Player>();
     ClassDB::register_class<CameraSystem>();
     ClassDB::register_class<Gun>();
+    ClassDB::register_class<Bullet>();
 }
 
 void uninitialize_types(ModuleInitializationLevel p_level) {
