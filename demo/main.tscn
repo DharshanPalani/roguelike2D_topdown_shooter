@@ -4,7 +4,7 @@
 
 [node name="Player" type="Player" parent="."]
 position = Vector2(-30.2298, 33.3333)
-rotation = 0.938721
+rotation = 1.01251
 
 [node name="Gun" type="Gun" parent="Player" node_paths=PackedStringArray("firePoint", "bulletContainer")]
 firePoint = NodePath("FirePoint")
