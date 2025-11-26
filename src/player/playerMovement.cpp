@@ -18,7 +18,7 @@ void PlayerMovement::_process(double delta) {
     if (input->is_action_pressed("ui_up"))    velocity.y -= 1;
 
     if (velocity.length() > 0) {
-        velocity = velocity.normalized() * 100 * delta;
+        velocity = velocity.normalized() * speed * delta;
         
         if(entity != nullptr) {
             entity->set_position(entity->get_position() + velocity);
@@ -32,6 +32,11 @@ void PlayerMovement::_bind_methods() {
     godot::ClassDB::bind_method(godot::D_METHOD("get_entity"), &PlayerMovement::get_entity);
     
     ADD_PROPERTY(godot::PropertyInfo(godot::Variant::OBJECT, "entity", godot::PROPERTY_HINT_NODE_TYPE, "Node2D"), "set_entity", "get_entity");
+
+    godot::ClassDB::bind_method(godot::D_METHOD("set_speed", "speed"), &PlayerMovement::set_speed);
+    godot::ClassDB::bind_method(godot::D_METHOD("get_speed"), &PlayerMovement::get_speed);
+
+    ADD_PROPERTY(godot::PropertyInfo(godot::Variant::INT, "speed"), "set_speed", "get_speed");
 }
 
 Entity *PlayerMovement::get_entity() const {
@@ -40,4 +45,12 @@ Entity *PlayerMovement::get_entity() const {
 
 void PlayerMovement::set_entity(Entity* entity) {
     this->entity = entity;
+}
+
+int PlayerMovement::get_speed() const {
+    return this->speed;
+}
+
+void PlayerMovement::set_speed(int speed) {
+    this->speed = speed;
 }

@@ -14,10 +14,11 @@ target = NodePath("../Player")
 
 [node name="Player" type="Entity" parent="."]
 health = 10
-rotation = 1.29481
+rotation = 1.34197
 
 [node name="PlayerMovement" type="PlayerMovement" parent="Player" node_paths=PackedStringArray("entity")]
 entity = NodePath("..")
+speed = 100
 
 [node name="Gun" type="Gun" parent="Player" node_paths=PackedStringArray("firePoint", "bulletContainer")]
 firePoint = NodePath("FirePoint")

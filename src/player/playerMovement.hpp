@@ -8,6 +8,7 @@ class PlayerMovement : public godot::Node2D {
     GDCLASS(PlayerMovement, godot::Node2D);
 
     private:
+        int speed;
         Entity* entity = nullptr;
     
     protected:
@@ -21,6 +22,9 @@ class PlayerMovement : public godot::Node2D {
         
         Entity *get_entity() const;
         void set_entity(Entity* entity);
+
+        int get_speed() const;
+        void set_speed(int speed);
 
 };
 
