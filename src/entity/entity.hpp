@@ -18,6 +18,8 @@ class Entity : public godot::Node2D {
 
         int get_health() const;
 
+        void _draw() override;
+
         void set_health(int health);
 
         void increment_health(int increment_value);
