@@ -2,22 +2,26 @@
 
 [node name="main" type="Node2D"]
 
-[node name="Player" type="Player" parent="."]
-position = Vector2(-30.2298, 33.3333)
-rotation = 1.01251
+[node name="Player(OLD)" type="Player" parent="."]
+visible = false
+position = Vector2(-0.0663962, 33.3333)
+rotation = 2.18713
 
-[node name="Gun" type="Gun" parent="Player" node_paths=PackedStringArray("firePoint", "bulletContainer")]
+[node name="Gun" type="Gun" parent="Player(OLD)" node_paths=PackedStringArray("firePoint", "bulletContainer")]
 firePoint = NodePath("FirePoint")
 bulletContainer = NodePath("../../BulletContainer")
 z_index = -1
 position = Vector2(4, -65)
 rotation = 1.5708
 
-[node name="FirePoint" type="Node2D" parent="Player/Gun"]
+[node name="FirePoint" type="Node2D" parent="Player(OLD)/Gun"]
 position = Vector2(0.88764, 5.26603)
 
 [node name="CameraSystem" type="CameraSystem" parent="." node_paths=PackedStringArray("target")]
-target = NodePath("../Player")
-position = Vector2(-30.2298, 33.3333)
+target = NodePath("../Player(OLD)")
+position = Vector2(-0.0663962, 33.3333)
 
 [node name="BulletContainer" type="Node2D" parent="."]
+
+[node name="Player" type="Entity" parent="."]
+health = 5
