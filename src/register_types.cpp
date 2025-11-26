@@ -1,5 +1,4 @@
 #include "register_types.h"
-#include "player/player.h"
 #include "cameraSystem.hpp"
 #include "bullet.hpp"
 #include "entity/entity.hpp"
@@ -19,7 +18,6 @@ void initialize_types(ModuleInitializationLevel p_level) {
         return;
     }
     
-    ClassDB::register_class<Player>();
     ClassDB::register_class<CameraSystem>();
     ClassDB::register_class<Gun>();
     ClassDB::register_class<Bullet>();

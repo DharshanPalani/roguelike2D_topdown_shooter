@@ -2,11 +2,6 @@
 
 [node name="main" type="Node2D"]
 
-[node name="Player(OLD)" type="Player" parent="."]
-visible = false
-position = Vector2(-0.0663962, 63.1949)
-rotation = 1.26507
-
 [node name="CameraSystem" type="CameraSystem" parent="." node_paths=PackedStringArray("target")]
 target = NodePath("../Player")
 
@@ -14,7 +9,7 @@ target = NodePath("../Player")
 
 [node name="Player" type="Entity" parent="."]
 health = 10
-rotation = 1.34197
+rotation = 1.33805
 
 [node name="PlayerMovement" type="PlayerMovement" parent="Player" node_paths=PackedStringArray("entity")]
 entity = NodePath("..")
