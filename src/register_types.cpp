@@ -1,5 +1,5 @@
 #include "register_types.h"
-#include "player.h"
+#include "player/player.h"
 #include "cameraSystem.hpp"
 #include <bullet.hpp>
 #include <gdextension_interface.h>

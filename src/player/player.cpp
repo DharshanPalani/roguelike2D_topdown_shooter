@@ -1,4 +1,4 @@
-#include <player.h>
+#include "player.h"
 
 #include <godot_cpp/classes/input.hpp>
 
@@ -17,8 +17,8 @@ Player::Player() {
     speed = 200;
 
     playerSpriteData.spriteCenter = Vector2(0, 0);
-    playerSpriteData.spriteColor = Color(1,1,0);
-    playerSpriteData.spriteRadius = 50.0f;
+    playerSpriteData.spriteColor = Color(0,0,1);
+    playerSpriteData.spriteRadius = 20.0f;
 }
 
 
