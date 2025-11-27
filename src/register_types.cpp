@@ -1,15 +1,14 @@
 #include "register_types.h"
 #include "cameraSystem.hpp"
-#include "bullet.hpp"
 #include "entity/entity.hpp"
 #include "player/playerMovement.hpp"
 #include "player/playerShoot.hpp"
+#include "weapon/gun.hpp"
+#include "weapon/bullet.hpp"
 
 #include <gdextension_interface.h>
 #include <godot_cpp/core/class_db.hpp>
 #include <godot_cpp/godot.hpp>
-
-#include <gun.hpp>
 
 using namespace godot;
 

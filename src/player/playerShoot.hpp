@@ -1,7 +1,7 @@
 #ifndef playerShoot_hpp
 #define playerShoot_hpp
 
-#include "../gun.hpp"
+#include "../weapon/gun.hpp"
 
 #include <godot_cpp/classes/node2d.hpp>
 
