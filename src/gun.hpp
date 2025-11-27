@@ -19,8 +19,6 @@ class Gun : public godot::Node2D {
     public:
         Gun();
 
-        void _process(double delta) override;
-
         void _draw();
 
         double get_range() const;
@@ -33,6 +31,8 @@ class Gun : public godot::Node2D {
         void set_bulletContainer(godot::Node2D* bulletContainer);
 
         godot::Node2D* get_bulletContainer() const;
+
+        void fire();
 
 };
 

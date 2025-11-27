@@ -3,7 +3,7 @@
 #include "bullet.hpp"
 #include "entity/entity.hpp"
 #include "player/playerMovement.hpp"
-
+#include "player/playerShoot.hpp"
 
 #include <gdextension_interface.h>
 #include <godot_cpp/core/class_db.hpp>
@@ -23,6 +23,7 @@ void initialize_types(ModuleInitializationLevel p_level) {
     ClassDB::register_class<Bullet>();
     ClassDB::register_class<Entity>();
     ClassDB::register_class<PlayerMovement>();
+    ClassDB::register_class<PlayerShoot>();
 }
 
 void uninitialize_types(ModuleInitializationLevel p_level) {

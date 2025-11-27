@@ -9,19 +9,23 @@ target = NodePath("../Player")
 
 [node name="Player" type="Entity" parent="."]
 health = 10
-rotation = 1.33805
+rotation = 1.34534
 
 [node name="PlayerMovement" type="PlayerMovement" parent="Player" node_paths=PackedStringArray("entity")]
 entity = NodePath("..")
 speed = 100
 
-[node name="Gun" type="Gun" parent="Player" node_paths=PackedStringArray("firePoint", "bulletContainer")]
-firePoint = NodePath("FirePoint")
-bulletContainer = NodePath("../../BulletContainer")
-z_index = -1
-position = Vector2(-6.0353, -16.3883)
-rotation = -1.69314
+[node name="PlayerShoot" type="PlayerShoot" parent="Player" node_paths=PackedStringArray("gun")]
+gun = NodePath("Gun")
+rotation = 1.63186
 
-[node name="FirePoint" type="Node2D" parent="Player/Gun"]
+[node name="Gun" type="Gun" parent="Player/PlayerShoot" node_paths=PackedStringArray("firePoint", "bulletContainer")]
+firePoint = NodePath("FirePoint")
+bulletContainer = NodePath("../../../BulletContainer")
+z_index = -1
+position = Vector2(-15.9894, 7.02417)
+rotation = 2.95818
+
+[node name="FirePoint" type="Node2D" parent="Player/PlayerShoot/Gun"]
 position = Vector2(0.88764, 5.26603)
 rotation = 3.14159

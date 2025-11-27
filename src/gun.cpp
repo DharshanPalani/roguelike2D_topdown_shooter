@@ -24,21 +24,6 @@ Gun::Gun() {
     range = 20;
 }
 
-void Gun::_process(double delta) {
-
-    godot::Input* input = godot::Input::get_singleton();
-
-    if(firePoint == nullptr) return;
-
-    if(input->is_action_just_pressed("fire") && firePoint != nullptr) {
-        Bullet* newBullet = memnew(Bullet);
-        newBullet->set_rotation(firePoint->get_global_rotation());
-        newBullet->set_position(firePoint->get_global_position());
-        bulletContainer->add_child(newBullet);
-    }
-
-}
-
 void Gun::_draw() {
     float gun_length = 20.0f;
     float gun_width = 10.0f;
@@ -71,4 +56,14 @@ godot::Node2D* Gun::get_bulletContainer() const {
 
 void Gun::set_bulletContainer(godot::Node2D* bulletContainer) {
     this->bulletContainer = bulletContainer;
+}
+
+void Gun::fire() {
+
+    if(firePoint == nullptr) return;
+
+    Bullet* newBullet = memnew(Bullet);
+    newBullet->set_rotation(firePoint->get_global_rotation());
+    newBullet->set_position(firePoint->get_global_position());
+    bulletContainer->add_child(newBullet);
 }
