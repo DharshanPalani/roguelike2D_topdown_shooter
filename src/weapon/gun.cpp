@@ -1,10 +1,10 @@
-#include <gun.hpp>
+#include "gun.hpp"
 
 #include <godot_cpp/classes/input.hpp>
 #include <godot_cpp/classes/sprite2d.hpp>
 #include <godot_cpp/classes/tree.hpp>
 
-#include <bullet.hpp>
+#include "bullet.hpp"
 
 void Gun::_bind_methods() {
 
