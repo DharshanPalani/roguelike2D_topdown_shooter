@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://cofkiwvg0vyrp"]
+
+[ext_resource type="PackedScene" uid="uid://bytctafhp54jc" path="res://gun.tscn" id="1_4flbx"]
+
+[node name="Player" type="Entity"]
+health = 10
+
+[node name="PlayerMovement" type="PlayerMovement" parent="." node_paths=PackedStringArray("entity")]
+entity = NodePath("..")
+speed = 100
+
+[node name="PlayerShoot" type="PlayerShoot" parent="." node_paths=PackedStringArray("gun")]
+gun = NodePath("Gun")
+
+[node name="Gun" parent="PlayerShoot" instance=ExtResource("1_4flbx")]
+position = Vector2(-5, -21)
+rotation = -1.5708

@@ -8,6 +8,7 @@ class Entity : public godot::Node2D {
 
     private:
         int health;
+        int maxHealth;
 
     protected:
         static void _bind_methods();
@@ -19,6 +20,8 @@ class Entity : public godot::Node2D {
         int get_health() const;
 
         void _draw() override;
+
+        void _ready() override;
 
         void set_health(int health);
 

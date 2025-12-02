@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bytctafhp54jc"]
+
+[node name="Gun" type="Gun" node_paths=PackedStringArray("firePoint")]
+firePoint = NodePath("FirePoint")
+z_index = -1
+rotation = 2.95818
+
+[node name="FirePoint" type="Node2D" parent="."]
+position = Vector2(0.88764, 5.26603)
+rotation = 3.14159
