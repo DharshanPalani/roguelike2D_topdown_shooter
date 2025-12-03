@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dflq0mewpvguj"]
+
+[node name="Enemy" type="Entity"]
+
+[node name="EnemyMovement" type="EnemyMovement" parent="." node_paths=PackedStringArray("entity")]
+entity = NodePath("..")
+speed = 10

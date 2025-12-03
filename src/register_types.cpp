@@ -5,6 +5,9 @@
 #include "player/playerShoot.hpp"
 #include "weapon/gun.hpp"
 #include "weapon/bullet.hpp"
+#include "enemy/enemyMovement.hpp"
+
+
 #include <gdextension_interface.h>
 #include <godot_cpp/core/class_db.hpp>
 #include <godot_cpp/godot.hpp>
@@ -22,6 +25,7 @@ void initialize_types(ModuleInitializationLevel p_level) {
     ClassDB::register_class<Entity>();
     ClassDB::register_class<PlayerMovement>();
     ClassDB::register_class<PlayerShoot>();
+    ClassDB::register_class<EnemyMovement>();
 }
 
 void uninitialize_types(ModuleInitializationLevel p_level) {
